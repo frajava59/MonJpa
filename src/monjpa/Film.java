@@ -56,6 +56,48 @@ public class Film implements Serializable {
         this.duree = duree;
     }
 
+    public List<Lien> getLiens() {
+        return liens;
+    }
+
+    public void setLiens(List<Lien> liens) {
+        this.liens = liens;
+    }
+
+    public List<Pays> getPays() {
+        return pays;
+    }
+
+    public void setPays(List<Pays> pays) {
+        this.pays = pays;
+    }
+
+    public List<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(List<Genre> genres) {
+        this.genres = genres;
+    }
+
+    public List<Personne> getActeurs() {
+        return acteurs;
+    }
+
+    public void setActeurs(List<Personne> acteurs) {
+        this.acteurs = acteurs;
+    }
+
+    public List<Personne> getRealisateurs() {
+        return realisateurs;
+    }
+
+    public void setRealisateurs(List<Personne> realisateurs) {
+        this.realisateurs = realisateurs;
+    }
+    
+    
+
     public Long getId() {
         return id;
     }

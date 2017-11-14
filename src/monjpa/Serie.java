@@ -26,6 +26,7 @@ public class Serie implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
 
     @ManyToMany(mappedBy = "seriesJoues")
     private List<Personne> acteurs = new ArrayList<>();

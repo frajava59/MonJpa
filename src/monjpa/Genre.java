@@ -27,13 +27,22 @@ public class Genre implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @JoinTable(name = "FILM")
+    private String typeGenre;
+
+    @JoinTable(name = "FILM_GENRE")
     @ManyToMany
     private List<Film> films = new ArrayList<>();
 
-    @JoinTable(name = "SERIE")
+    @JoinTable(name = "SERIE_GENRE")
     @ManyToMany
     private List<Serie> series = new ArrayList<>();
+
+    public Genre(String typeGenre) {
+        this.typeGenre = typeGenre;
+    }
+
+    public Genre() {
+    }
 
     public Long getId() {
         return id;
@@ -41,6 +50,30 @@ public class Genre implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getTypeGenre() {
+        return typeGenre;
+    }
+
+    public void setTypeGenre(String typeGenre) {
+        this.typeGenre = typeGenre;
+    }
+
+    public List<Film> getFilms() {
+        return films;
+    }
+
+    public void setFilms(List<Film> films) {
+        this.films = films;
+    }
+
+    public List<Serie> getSeries() {
+        return series;
+    }
+
+    public void setSeries(List<Serie> series) {
+        this.series = series;
     }
 
     @Override
@@ -65,7 +98,7 @@ public class Genre implements Serializable {
 
     @Override
     public String toString() {
-        return "monjpa.Genre[ id=" + id + " ]";
+        return "monjpa.Genre[ id=" + id + " genre="+typeGenre+" ]";
     }
 
 }

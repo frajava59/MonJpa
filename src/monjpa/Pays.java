@@ -29,11 +29,11 @@ public class Pays implements Serializable {
 
     private String nom;
 
-    @JoinTable(name = "FILM")
+    @JoinTable(name = "FILM_PAYS")
     @ManyToMany
     private List<Film> films = new ArrayList<>();
 
-    @JoinTable(name = "SERIE")
+    @JoinTable(name = "SERIE_PAYS")
     @ManyToMany
     private List<Serie> series = new ArrayList<>();
 
